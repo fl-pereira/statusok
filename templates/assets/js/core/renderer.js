@@ -4,15 +4,18 @@ function getValueByPath(obj, path) {
 
 function renderTexts(config) {
   document.querySelectorAll('[data-text]').forEach(el => {
-    const value = getValueByPath(config, el.dataset.text);
-    if (value !== undefined) el.innerText = value;
+    const path = el.dataset.text;
+    const value = getValueByPath(config, path);
+
+    // 🔥 SEM CONDIÇÃO — escreve sempre
+    el.textContent = value ?? '';
   });
 }
 
 function renderLinks(config) {
   document.querySelectorAll('[data-link]').forEach(el => {
     const value = getValueByPath(config, el.dataset.link);
-    if (value !== undefined) el.href = value;
+    if (value) el.href = value;
   });
 }
 
