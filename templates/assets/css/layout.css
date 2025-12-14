@@ -1,3 +1,7 @@
+/* =========================
+   TEMPLATE PRESTADORES
+========================= */
+
 .topbar {
   padding: 20px 0;
 }
@@ -287,5 +291,199 @@
   }
 }
 
+/* =========================
+   TEMPLATE GASTRONÔMICO
+========================= */
 
+/* HERO */
+.gastro-hero {
+  padding: 64px 0 32px;
+}
+
+.gastro-hero-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.gastro-hero-image {
+  width: 120px;
+  height: 120px;
+  border-radius: 24px;
+  background: linear-gradient(135deg, #e2e8f0, #f8fafc);
+  margin-bottom: 16px;
+}
+
+.gastro-hero-text h1 {
+  font-size: 2rem;
+  margin-bottom: 6px;
+}
+
+.gastro-hero-text p {
+  font-size: 0.95rem;
+  color: #475569;
+}
+
+/* LINKS GRID */
+.links-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+/* LINK CARD */
+.link-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 18px 20px;
+  background: white;
+  border-radius: 18px;
+  text-decoration: none;
+  color: #0f172a;
+  font-weight: 600;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.06);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.link-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 25px 50px rgba(0,0,0,0.12);
+}
+
+/* LINK CARD DESTAQUE */
+.link-card.featured {
+  grid-column: span 2;
+}
+
+/* =========================
+   BANNER PROMOCIONAL
+========================= */
+
+.promo-section {
+  padding: 32px 0 16px;
+  position: relative;
+}
+
+promo-section::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 40px;
+  height: 100%;
+  background: linear-gradient(to right, transparent, #fff);
+  pointer-events: none;
+}
+.promo-track {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding-bottom: 8px;
+  cursor: grab;
+}
+
+.promo-track:active {
+  cursor: grabbing;
+}
+
+.promo-track::-webkit-scrollbar {
+  display: none;
+}
+
+.promo-card {
+  min-width: 260px;
+  background: linear-gradient(135deg, #2563eb, #1e40af);
+  color: white;
+  border-radius: 20px;
+  padding: 20px;
+  scroll-snap-align: start;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+}
+
+.promo-card h3 {
+  font-size: 1.1rem;
+  margin-bottom: 6px;
+}
+
+.promo-card p {
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+.promo-tag {
+  display: inline-block;
+  background: rgba(255,255,255,0.2);
+  font-size: 0.7rem;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 999px;
+  margin-bottom: 10px;
+}
+
+
+/* BANNER PROMOCIONAL COMPLETO */
+.promo-banner {
+  background: #f1f5f9;
+  padding: 40px 0;
+}
+
+.promo-container {
+  display: flex;
+  overflow: hidden;
+  gap: 20px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.promo-item {
+  min-width: 100%;
+  position: relative;
+}
+
+.promo-image {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.promo-content {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  color: white;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.promo-content h3 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.promo-content p {
+  font-size: 1rem;
+}
+
+
+
+/* ÍCONE */
+.link-icon {
+  font-size: 1.4rem;
+}
+
+/* DESTAQUE */
+.link-card.featured {
+  border: 2px solid rgba(37, 99, 235, 0.35);
+  box-shadow: 0 25px 50px rgba(37, 99, 235, 0.18);
+}
+
+/* MOBILE */
+@media (max-width: 640px) {
+  .links-grid {
+    grid-template-columns: 1fr;
+  }
+}
 
