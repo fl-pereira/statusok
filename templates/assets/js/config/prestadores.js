@@ -9,7 +9,8 @@ window.TEMPLATE_CONFIG = {
     title: "Serviços profissionais para o seu negócio",
     subtitle: "Atendimento rápido, simples e direto pelo WhatsApp.",
     ctaText: "Falar no WhatsApp",
-    ctaLink: "https://wa.me/5511999999999"
+    ctaLink: "https://wa.me/5511999999999",
+    image: "/assets/img/prestadores/hero.jpg"
   },
 
   about: {
@@ -20,8 +21,16 @@ window.TEMPLATE_CONFIG = {
   services: {
     title: "Nossos serviços",
     items: [
-      { title: "Manutenção", description: "Serviços completos de manutenção." },
-      { title: "Instalação", description: "Instalação rápida e segura.", featured: true }
+      { 
+        title: "Manutenção",
+        description: "Serviços completos de manutenção." ,
+        icon: "/assets/img/prestadores/service.jpg"
+      },
+      { 
+        title: "Instalação",
+        description: "Instalação rápida e segura.",
+        icon: "/assets/img/prestadores/service.jpg",
+        featured: true }
     ]
   },
 
