@@ -1,4 +1,4 @@
-const TEMPLATE_CONFIG = {
+window.TEMPLATE_CONFIG = {
   brand: {
     name: "StatusOK",
     whatsapp: "https://wa.me/5511999999999",
@@ -7,10 +7,9 @@ const TEMPLATE_CONFIG = {
 
   hero: {
     title: "Serviços profissionais para o seu negócio",
-    subtitle: "Atendimento rápido e direto pelo WhatsApp.",
+    subtitle: "Atendimento rápido, simples e direto pelo WhatsApp.",
     ctaText: "Falar no WhatsApp",
-    ctaLink: "https://wa.me/5511999999999",
-    image: "/assets/img/placeholders/hero-service.svg"
+    ctaLink: "https://wa.me/5511999999999"
   },
 
   about: {
@@ -21,36 +20,16 @@ const TEMPLATE_CONFIG = {
   services: {
     title: "Nossos serviços",
     items: [
-      {
-        icon: "/assets/img/placeholders/icon.svg",
-        title: "Manutenção",
-        description: "Serviços completos de manutenção."
-      },
-      {
-        icon: "/assets/img/placeholders/icon.svg",
-        title: "Instalação",
-        description: "Instalação rápida e segura.",
-        featured: true
-      },
-      {
-        icon: "/assets/img/placeholders/icon.svg",
-        title: "Teste",
-        description: "Instalação rápida e segura."
-      }
+      { title: "Manutenção", description: "Serviços completos de manutenção." },
+      { title: "Instalação", description: "Instalação rápida e segura.", featured: true }
     ]
   },
 
   benefits: {
     title: "Por que escolher",
     items: [
-      {
-        title: "Resposta rápida",
-        description: "Contato direto pelo WhatsApp."
-      },
-      {
-        title: "Profissionais experientes",
-        description: "Equipe qualificada."
-      }
+      { title: "Resposta rápida", description: "Contato direto pelo WhatsApp." },
+      { title: "Profissionais experientes", description: "Equipe qualificada." }
     ]
   },
 
@@ -62,11 +41,6 @@ const TEMPLATE_CONFIG = {
   },
 
   footer: {
-    text: "© 2025 StatusOK — Presença online simples e funcional."
-  },
-
-  hero: {
-  image: "/assets/img/placeholders/hero-service.svg"
-}
-
+    text: "© 2025 StatusOK"
+  }
 };
