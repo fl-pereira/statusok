@@ -23,6 +23,8 @@
 
 .hero-text {
   max-width: 560px;
+  z-index: 2;
+  position: relative;
 }
 
 .hero h1 {
@@ -176,6 +178,7 @@
   align-items: center;
   justify-content: center;
   position: relative;
+  z-index: 1;
   overflow: hidden;
 }
 
