@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>StatusOK</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="/assets/css/base.css">
+  <link rel="stylesheet" href="/assets/css/layout.css">
+  <link rel="stylesheet" href="/assets/css/themes/default.css">
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="topbar">
+    <div class="container topbar-content">
+      <span class="logo" data-text="brand.name"></span>
+      <a class="btn small"
+         data-link="brand.whatsapp"
+         data-text="brand.cta"></a>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container hero-content">
+      <div class="hero-text">
+        <h1 data-text="hero.title"></h1>
+        <p data-text="hero.subtitle"></p>
+        <a class="btn"
+           data-link="hero.ctaLink"
+           data-text="hero.ctaText"></a>
+      </div>
+
+      <div class="hero-image">
+        <img data-image="hero.image" alt="" hidden>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOBRE -->
+  <section class="section">
+    <div class="container narrow">
+      <h2 data-text="about.title"></h2>
+      <p data-text="about.text"></p>
+    </div>
+  </section>
+
+  <!-- SERVIÇOS -->
+  <section class="section light">
+    <div class="container">
+      <h2 data-text="services.title"></h2>
+
+      <div class="cards-grid" data-repeat="services.items">
+        <article class="card">
+          <div class="card-media">
+            <img data-item-image="icon" alt="" hidden>
+          </div>
+          <h3 data-item-text="title"></h3>
+          <p data-item-text="description"></p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- BENEFÍCIOS -->
+  <section class="section">
+    <div class="container">
+      <span class="benefit-icon">✔</span>
+      <h2 data-text="benefits.title"></h2>
+
+      <div class="cards-grid" data-repeat="benefits.items">
+        <article class="card small">
+          <h3 data-item-text="title"></h3>
+          <p data-item-text="description"></p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta">
+    <div class="container narrow">
+      <h2 data-text="cta.title"></h2>
+      <p data-text="cta.text"></p>
+      <a class="btn light"
+         data-link="cta.buttonLink"
+         data-text="cta.buttonText"></a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <p data-text="footer.text"></p>
+    </div>
+  </footer>
+
+  <script src="/assets/js/config/prestadores.js"></script>
+  <script src="/assets/js/core/renderer.js"></script>
+  <script src="/assets/js/main.js"></script>
+</body>
+</html>

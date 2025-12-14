@@ -1,0 +1,77 @@
+function getValueByPath(obj, path) {
+  return path.split('.').reduce((acc, key) => acc && acc[key], obj);
+}
+
+function renderTexts(config) {
+  document.querySelectorAll('[data-text]').forEach(el => {
+    const value = getValueByPath(config, el.dataset.text);
+    if (value !== undefined) el.innerText = value;
+  });
+}
+
+function renderLinks(config) {
+  document.querySelectorAll('[data-link]').forEach(el => {
+    const value = getValueByPath(config, el.dataset.link);
+    if (value !== undefined) el.href = value;
+  });
+}
+
+function renderImages(config) {
+  document.querySelectorAll('[data-image]').forEach(el => {
+    const value = getValueByPath(config, el.dataset.image);
+
+    if (!value) return;
+
+    const img = new Image();
+    img.src = value;
+
+    img.onload = () => {
+      el.src = value;
+      el.hidden = false;
+
+      el.closest('.hero-image')?.classList.add('has-image');
+    };
+
+    img.onerror = () => {
+      // Mantém placeholder, não exibe imagem quebrada
+      el.hidden = true;
+    };
+  });
+}
+
+function renderRepeats(config) {
+  document.querySelectorAll('[data-repeat]').forEach(container => {
+    const items = getValueByPath(config, container.dataset.repeat);
+    if (!Array.isArray(items)) return;
+
+    const template = container.firstElementChild.cloneNode(true);
+    container.innerHTML = '';
+
+    items.forEach(item => {
+    const node = template.cloneNode(true);
+
+    if (item.featured) {
+        node.classList.add("featured");
+    }
+
+    node.querySelectorAll('[data-item-text]').forEach(el => {
+        el.innerText = item[el.dataset.itemText] || '';
+    });
+
+    node.querySelectorAll('[data-item-image]').forEach(el => {
+        if (item[el.dataset.itemImage]) {
+        el.src = item[el.dataset.itemImage];
+        }
+    });
+
+    container.appendChild(node);
+    });
+  });
+}
+
+function renderTemplate(config) {
+  renderTexts(config);
+  renderLinks(config);
+  renderImages(config);
+  renderRepeats(config);
+}
