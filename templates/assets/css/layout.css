@@ -18,13 +18,16 @@
   display: grid;
   grid-template-columns: 1.2fr 1fr;
   gap: 40px;
-  align-items: center;
+  align-items: stretch;
 }
 
 .hero-text {
   max-width: 560px;
   z-index: 2;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .hero h1 {
