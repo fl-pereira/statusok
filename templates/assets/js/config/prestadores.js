@@ -2,6 +2,7 @@ window.TEMPLATE_CONFIG = {
   brand: {
     name: "StatusOK",
     whatsapp: "https://wa.me/5511999999999",
+    logo: "/assets/img/prestadores/logo.png",
     cta: "Contato"
   },
 

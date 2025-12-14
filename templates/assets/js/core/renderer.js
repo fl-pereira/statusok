@@ -22,7 +22,6 @@ function renderLinks(config) {
 function renderImages(config) {
   document.querySelectorAll('[data-image]').forEach(el => {
     const value = getValueByPath(config, el.dataset.image);
-
     if (!value) return;
 
     const img = new Image();
@@ -32,15 +31,19 @@ function renderImages(config) {
       el.src = value;
       el.hidden = false;
 
-      el.closest('.hero-image')?.classList.add('has-image');
-    };
+      // ✅ HERO: ativa imagem
+      const hero = el.closest('.hero-image');
+      if (hero) hero.classList.add('has-image');
 
-    img.onerror = () => {
-      // Mantém placeholder, não exibe imagem quebrada
-      el.hidden = true;
+      // ✅ LOGO: imagem substitui texto
+      if (el.classList.contains('brand-logo')) {
+        const textLogo = el.parentElement.querySelector('.logo');
+        if (textLogo) textLogo.hidden = true;
+      }
     };
   });
 }
+
 
 function renderRepeats(config) {
   document.querySelectorAll('[data-repeat]').forEach(container => {

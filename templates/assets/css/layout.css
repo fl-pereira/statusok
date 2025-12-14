@@ -196,7 +196,7 @@
   font-weight: 500;
 }
 
-/* Imagem real (só quando existe) */
+/* Imagem real (fica oculta até o JS agir) */
 .hero-image img {
   display: none;
   width: 100%;
@@ -204,7 +204,7 @@
   object-fit: cover;
 }
 
-/* Quando houver imagem real */
+/* Quando o JS marcar que existe imagem */
 .hero-image.has-image img {
   display: block;
 }
@@ -213,41 +213,7 @@
   display: none;
 }
 
-.hero-image::after {
-  content: "Imagem do serviço";
-  color: #64748b;
-  font-size: 0.95rem;
-  font-weight: 500;
-}
-
-.hero-image img:not([hidden]) {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.hero-image img:not([hidden]) + ::after {
-  display: none;
-}
-
-.hero-image.has-image::after {
-  display: none;
-}
-
-.hero-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.hero-placeholder {
-  position: absolute;
-  pointer-events: none;
-  color: #64748b;
-  font-size: 0.95rem;
-  font-weight: 500;
-}
-
+/* TÍTULO DA SEÇÃO */
 .section-title {
   display: flex;
   align-items: center;
@@ -258,7 +224,6 @@
 .section-title h2 {
   margin-bottom: 0; /* evita quebra de alinhamento */
 }
-
 
 /* Ícone de benefício */
 .benefit-icon {
