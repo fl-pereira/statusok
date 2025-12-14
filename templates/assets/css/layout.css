@@ -58,28 +58,26 @@
 .card {
   background: white;
   padding: 32px;
-  border-radius: 18px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.06);
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.06);
   transition: 
     transform 0.25s ease,
     box-shadow 0.25s ease,
     border-color 0.25s ease;
-  border: 1px solid transparent;
 }
 
 .card:hover {
   transform: translateY(-6px);
   box-shadow: 0 30px 60px rgba(0,0,0,0.12);
-  border-color: rgba(37, 99, 235, 0.15);
 }
 
 .card p {
   font-size: 0.95rem;
   line-height: 1.55;
+  color: #475569;
 }
 
 .card h3 {
-  transition: color 0.25s ease;
   font-size: 1.1rem;
   margin-bottom: 8px;
 }
@@ -113,7 +111,6 @@
   text-transform: uppercase;
   letter-spacing: 0.04em;
 }
-
 
 /* CARD DESTAQUE */
 .card.featured {
@@ -220,9 +217,9 @@
 /* Ícone de benefício */
 .benefit-icon {
   display: inline-block;
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   color: var(--accent);
-  margin-bottom: 12px;
+  margin-bottom: 16px;
 }
 
 @media (max-width: 768px) {
