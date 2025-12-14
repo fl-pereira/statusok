@@ -45,6 +45,45 @@
   margin-bottom: 28px;
 }
 
+/* Hero image */
+.hero-image {
+  width: 100%;
+  height: 320px;
+  background: linear-gradient(135deg, #e2e8f0, #f8fafc);
+  border-radius: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Placeholder */
+.hero-image::after {
+  content: "Imagem do serviço";
+  color: #64748b;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+/* Imagem real (fica oculta até o JS agir) */
+.hero-image img {
+  display: none;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Quando o JS marcar que existe imagem */
+.hero-image.has-image img {
+  display: block;
+}
+
+.hero-image.has-image::after {
+  display: none;
+}
+
+/* SECTIONS */
 .section {
   padding: 96px 0;
 }
@@ -121,7 +160,7 @@
   letter-spacing: 0.04em;
 }
 
-/* CARD DESTAQUE */
+/* Cardo destaque */
 .card.featured {
   position: relative;
   border: 2px solid rgba(37, 99, 235, 0.35);
@@ -175,43 +214,6 @@
   font-size: 0.9rem;
 }
 
-/* HERO IMAGE */
-.hero-image {
-  width: 100%;
-  height: 320px;
-  background: linear-gradient(135deg, #e2e8f0, #f8fafc);
-  border-radius: 24px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  overflow: hidden;
-}
-
-/* Placeholder */
-.hero-image::after {
-  content: "Imagem do serviço";
-  color: #64748b;
-  font-size: 0.95rem;
-  font-weight: 500;
-}
-
-/* Imagem real (fica oculta até o JS agir) */
-.hero-image img {
-  display: none;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-/* Quando o JS marcar que existe imagem */
-.hero-image.has-image img {
-  display: block;
-}
-
-.hero-image.has-image::after {
-  display: none;
-}
 
 /* TÍTULO DA SEÇÃO */
 .section-title {
@@ -297,7 +299,6 @@
   gap: 16px;
 }
 
-/* LINK CARD */
 .link-card {
   display: flex;
   align-items: center;
@@ -317,9 +318,10 @@
   box-shadow: 0 25px 50px rgba(0,0,0,0.12);
 }
 
-/* LINK CARD DESTAQUE */
 .link-card.featured {
   grid-column: span 2;
+  border: 2px solid rgba(37, 99, 235, 0.35);
+  box-shadow: 0 25px 50px rgba(37, 99, 235, 0.18);
 }
 
 /* =========================
@@ -331,7 +333,7 @@
   position: relative;
 }
 
-promo-section::after {
+.promo-section::after {
   content: "";
   position: absolute;
   top: 0;
@@ -388,61 +390,9 @@ promo-section::after {
   margin-bottom: 10px;
 }
 
-
-/* BANNER PROMOCIONAL COMPLETO */
-.promo-banner {
-  background: #f1f5f9;
-  padding: 40px 0;
-}
-
-.promo-container {
-  display: flex;
-  overflow: hidden;
-  gap: 20px;
-  transition: transform 0.3s ease-in-out;
-}
-
-.promo-item {
-  min-width: 100%;
-  position: relative;
-}
-
-.promo-image {
-  width: 100%;
-  height: 300px;
-  object-fit: cover;
-  border-radius: 10px;
-}
-
-.promo-content {
-  position: absolute;
-  bottom: 20px;
-  left: 20px;
-  color: white;
-  font-size: 1.2rem;
-  font-weight: 600;
-}
-
-.promo-content h3 {
-  margin: 0;
-  font-size: 1.5rem;
-}
-
-.promo-content p {
-  font-size: 1rem;
-}
-
-
-
 /* ÍCONE */
 .link-icon {
   font-size: 1.4rem;
-}
-
-/* DESTAQUE */
-.link-card.featured {
-  border: 2px solid rgba(37, 99, 235, 0.35);
-  box-shadow: 0 25px 50px rgba(37, 99, 235, 0.18);
 }
 
 /* MOBILE */
