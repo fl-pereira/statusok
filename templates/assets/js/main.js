@@ -1,28 +1,76 @@
 document.addEventListener("DOMContentLoaded", () => {
-  if (typeof TEMPLATE_CONFIG === "undefined") {
-    console.error("TEMPLATE_CONFIG não carregado");
-    return;
+
+  /* =========================
+     TEMPLATE (se existir)
+  ========================= */
+  if (typeof TEMPLATE_CONFIG !== "undefined") {
+    renderTemplate(TEMPLATE_CONFIG);
   }
-  renderTemplate(TEMPLATE_CONFIG);
-});
 
-let currentIndex = 0;
-const slides = document.querySelectorAll('.promo-item');
-const totalSlides = slides.length;
+  /* =========================
+     GALERIA - OVERLAY
+  ========================= */
+  const overlay = document.querySelector('.gallery-overlay');
+  const overlayImg = overlay?.querySelector('img');
 
-function goToSlide(index) {
+  document.querySelectorAll('.gallery-track img').forEach(img => {
+    img.addEventListener('click', () => {
+      if (!overlay || !overlayImg) return;
+
+      overlayImg.src = img.src;
+      overlay.hidden = false;
+    });
+  });
+
+  overlay?.addEventListener('click', () => {
+    overlay.hidden = true;
+    overlayImg.src = '';
+  });
+
+  /* =========================
+     BANNER PROMOCIONAL (se existir)
+  ========================= */
+  const slides = document.querySelectorAll('.promo-item');
   const container = document.querySelector('.promo-container');
-  container.style.transform = `translateX(-${index * 100}%)`;
-}
 
-function nextSlide() {
-  currentIndex = (currentIndex + 1) % totalSlides;
-  goToSlide(currentIndex);
-}
+  if (slides.length && container) {
+    let currentIndex = 0;
 
-// Inicia o slide automático
-setInterval(nextSlide, 3000);
+    function goToSlide(index) {
+      container.style.transform = `translateX(-${index * 100}%)`;
+    }
 
-// Você também pode implementar navegação manual, por exemplo:
-document.querySelector('.next-button').addEventListener('click', nextSlide);
+    function nextSlide() {
+      currentIndex = (currentIndex + 1) % slides.length;
+      goToSlide(currentIndex);
+    }
 
+    setInterval(nextSlide, 3000);
+
+    const nextBtn = document.querySelector('.next-button');
+    if (nextBtn) {
+      nextBtn.addEventListener('click', nextSlide);
+    }
+  }
+
+  /* =========================
+   GALERIA - BOTÕES
+  ========================= */
+
+  const galleryTrack = document.querySelector('.gallery-track');
+  const btnPrev = document.querySelector('.gallery-btn.prev');
+  const btnNext = document.querySelector('.gallery-btn.next');
+
+  if (galleryTrack && btnPrev && btnNext) {
+    const scrollAmount = 180; // px por clique
+
+    btnNext.addEventListener('click', () => {
+      galleryTrack.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+    });
+
+    btnPrev.addEventListener('click', () => {
+      galleryTrack.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+    });
+  }
+
+});

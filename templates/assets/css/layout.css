@@ -347,8 +347,9 @@
   display: flex;
   gap: 16px;
   overflow-x: auto;
+  overflow-y: visible;
   scroll-snap-type: x mandatory;
-  padding-bottom: 8px;
+  padding-bottom: 16px;
   cursor: grab;
 }
 
@@ -367,7 +368,7 @@
   border-radius: 20px;
   padding: 20px;
   scroll-snap-align: start;
-  box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 }
 
 .promo-card h3 {
@@ -390,6 +391,96 @@
   margin-bottom: 10px;
 }
 
+/* =========================
+   GALERIA (GASTRONÔMICO)
+========================= */
+
+.gallery-section {
+  padding: 32px 0;
+  position: relative;
+  z-index: 1;
+}
+
+.gallery-track {
+  display: flex;
+  gap: 12px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  padding-bottom: 8px;
+  scrollbar-width: none; /* Remover scrollbar Firefox */
+
+  /* IMPORTANTE */
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Remover scrollbar Chrome, Edge, Safari */
+.gallery-track::-webkit-scrollbar {
+  display: none;                  
+}
+
+.gallery-track img {
+  flex: 0 0 auto;   /* 🔥 ISSO É CRÍTICO */
+  width: 160px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 16px;
+  cursor: pointer;
+  scroll-snap-align: start;
+  transition: transform 0.2s ease;
+}
+
+.gallery-track img:hover {
+  transform: scale(1.04);
+}
+
+/* OVERLAY */
+.gallery-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+.gallery-overlay img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 16px;
+}
+
+.gallery-overlay[hidden] {
+  display: none;
+}
+
+/* =========================
+   GALERIA - CONTROLES
+========================= */
+
+.gallery-controls {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.gallery-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(0,0,0,0.05);
+  font-size: 20px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.gallery-btn:hover {
+  background: rgba(0,0,0,0.12);
+}
+
 /* ÍCONE */
 .link-icon {
   font-size: 1.4rem;
@@ -400,5 +491,10 @@
   .links-grid {
     grid-template-columns: 1fr;
   }
+
+  .gallery-controls {
+    display: none;
+  }
+
 }
 
