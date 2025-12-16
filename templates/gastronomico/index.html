@@ -25,76 +25,36 @@
       </div>
 
       <div class="gastro-hero-text">
-        <h1>Nome do Restaurante</h1>
-        <p>Hambúrguer artesanal • Delivery e retirada</p>
+        <img class="brand-logo" data-image="brand.logo" hidden>
+        <h1 data-text="brand.name"></h1>
+        <p data-text="brand.description"></p>
       </div>
 
     </div>
   </header>
 
   <!-- BANNER PROMOCIONAL -->
-    <section class="promo-section">
+  <section class="promo-section">
     <div class="container">
-
-        <div class="promo-track">
-
+      <div class="promo-track" data-repeat="promos.items">
         <div class="promo-card">
-            <span class="promo-tag">Hoje</span>
-            <h3>Rodízio em Dobro</h3>
-            <p>Válido às segundas-feiras</p>
+          <span class="promo-tag" data-item-text="tag"></span>
+          <h3 data-item-text="title"></h3>
+          <p data-item-text="description"></p>
         </div>
-
-        <div class="promo-card">
-            <span class="promo-tag">Promo</span>
-            <h3>Combo Família</h3>
-            <p>Hambúrguer + Batata + Refrigerante</p>
-        </div>
-
-        <div class="promo-card">
-            <span class="promo-tag">Novo</span>
-            <h3>Lanche Artesanal</h3>
-            <p>Experimente nosso lançamento</p>
-        </div>
-
-        </div>
-
+      </div>
     </div>
-    </section>
+  </section>
 
   <!-- LINKS (CORAÇÃO DO TEMPLATE) -->
   <main class="section">
     <div class="container">
-
-      <div class="links-grid">
-
-        <!-- CARD DE LINK -->
-        <a href="#" class="link-card featured">
-          <span class="link-icon">🍔</span>
-          <span class="link-text">Cardápio Digital</span>
+      <div class="links-grid" data-repeat="links.items">
+        <a class="link-card" data-item-link="url"
+          data-item-class="featured:featured">
+          <span class="link-text" data-item-text="label"></span>
         </a>
-
-        <a href="#" class="link-card">
-          <span class="link-icon">📄</span>
-          <span class="link-text">Cardápio em PDF</span>
-        </a>
-
-        <a href="#" class="link-card">
-          <span class="link-icon">🛵</span>
-          <span class="link-text">Peça pelo WhatsApp</span>
-        </a>
-
-        <a href="#" class="link-card">
-          <span class="link-icon">📍</span>
-          <span class="link-text">Como chegar</span>
-        </a>
-
-        <a href="#" class="link-card">
-          <span class="link-icon">📸</span>
-          <span class="link-text">Instagram</span>
-        </a>
-
       </div>
-
     </div>
   </main>
 
@@ -105,17 +65,9 @@
         <button class="gallery-btn prev" aria-label="Anterior">‹</button>
         <button class="gallery-btn next" aria-label="Próximo">›</button>
       </div>
-      <div class="gallery-track">
-        <img src="/assets/img/gastronomico/gallery-1.jpg" alt="Prato 1">
-        <img src="/assets/img/gastronomico/gallery-2.jpg" alt="Prato 2">
-        <img src="/assets/img/gastronomico/gallery-3.jpg" alt="Prato 3">
-        <img src="/assets/img/gastronomico/gallery-1.jpg" alt="Prato 1">
-        <img src="/assets/img/gastronomico/gallery-1.jpg" alt="Prato 1">
-        <img src="/assets/img/gastronomico/gallery-1.jpg" alt="Prato 1">
-        <img src="/assets/img/gastronomico/gallery-1.jpg" alt="Prato 1">
-        <img src="/assets/img/gastronomico/gallery-1.jpg" alt="Prato 1">
+      <div class="gallery-track" data-repeat="gallery.items">
+        <img data-item-image="image" alt="">
       </div>
-
     </div>
   </section>
 
@@ -130,6 +82,10 @@
       <p>Rua Exemplo, 123 • Aberto todos os dias</p>
     </div>
   </footer>
+
+  <script src="/assets/js/config/gastronomico.js"></script>
+  <script src="/assets/js/core/renderer.js"></script>
+  <script src="/assets/js/main.js"></script>
 
 </body>
 </html>
