@@ -24,23 +24,19 @@ function renderImages(config) {
     const value = getValueByPath(config, el.dataset.image);
     if (!value) return;
 
-    const img = new Image();
-    img.src = value;
+    el.src = value;
+    el.hidden = false;
 
-    img.onload = () => {
-      el.src = value;
-      el.hidden = false;
+    // ✅ HERO: ativa imagem
+    const hero = el.closest('.hero-image');
+    if (hero) hero.classList.add('has-image');
 
-      // ✅ HERO: ativa imagem
-      const hero = el.closest('.hero-image');
-      if (hero) hero.classList.add('has-image');
+    // ✅ LOGO: imagem substitui texto
+    if (el.classList.contains('brand-logo')) {
+      const textLogo = el.parentElement.querySelector('.logo');
+      if (textLogo) textLogo.hidden = true;
+    }
 
-      // ✅ LOGO: imagem substitui texto
-      if (el.classList.contains('brand-logo')) {
-        const textLogo = el.parentElement.querySelector('.logo');
-        if (textLogo) textLogo.hidden = true;
-      }
-    };
   });
 }
 
