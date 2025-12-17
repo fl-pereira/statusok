@@ -88,6 +88,93 @@
   display: none;
 }
 
+/* EYEBROW DA SEÇÃO */
+
+.container-eyebrow {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.section-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  margin: 0 auto 12px auto; /* 👈 centraliza */
+
+  background: #ecfdf5; /* verde bem claro */
+  color: #16a34a;      /* verde sucesso */
+
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+/* bolinha verde */
+.section-eyebrow::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  background: #22c55e;
+  border-radius: 50%;
+}
+
+/* PROBLEMAS X SOLUÇÕES */
+
+.problems-columns {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  margin-top: 32px;
+}
+
+.problems-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.problem-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 24px;                 /* p-8 */
+  border-radius: 16px;           /* rounded-2xl */
+  border: 1px solid rgba(235, 37, 96, 0.2); 
+  background: rgba(235, 37, 103, 0.05);       
+
+  margin-bottom: 16px;
+}
+
+.problem-item.solution {
+  border-color: rgba(34, 197, 94, 0.25);
+  background: rgba(34, 197, 94, 0.08);
+}
+
+.problem-icon {
+  width: 28px;              /* h-6 w-6 */
+  height: 28px;
+  min-width: 28px;
+
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.problem-icon.problem {
+  background: rgba(239, 68, 68, 0.15); /* red-500 / 15% */
+  color: #ef4444;
+}
+
+.problem-icon.solution {
+  background: rgba(34, 197, 94, 0.15); /* green-500 / 15% */
+  color: #22c55e;
+}
+
 /* SECTIONS */
 .section {
   padding: 96px 0;
@@ -139,33 +226,11 @@
   color: var(--accent);
 }
 
-.card img {
-  width: 52px;
-  height: 52px;
-  margin-bottom: 20px;
-  background: rgba(37, 99, 235, 0.12);
-  border-radius: 14px;
-  padding: 10px;
-  transition: background 0.25s ease, transform 0.25s ease;
-}
-
-.card:hover img {
-  background: rgba(37, 99, 235, 0.18);
-  transform: scale(1.05);
-}
-
 .card.small {
   text-align: center;
 }
 
-.card-media .icon-placeholder {
-  font-size: 0.7rem;
-  color: #64748b;
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
-}
-
-/* Cardo destaque */
+/* Card destaque */
 .card.featured {
   position: relative;
   border: 2px solid rgba(37, 99, 235, 0.35);
@@ -194,38 +259,87 @@
   box-shadow: 0 45px 90px rgba(37, 99, 235, 0.25);
 }
 
-/* CTA */
+/* VANTAGENS */
+
+.section-dark {
+  background: #0f2a1d; /* slate-900 */
+  color: #e5e7eb;      /* texto claro */
+}
+
+/* Títulos em fundo escuro */
+.section-dark h2,
+.section-dark h3 {
+  color: #f8fafc;
+}
+
+/* Texto secundário */
+.section-dark p {
+  color: #cbd5f5;
+}
+
+/* CTA PODEROSA */
+
 .cta {
-  background: #0f172a;
-  color: white;
-  padding: 90px 0;
+  background: linear-gradient(
+    -180deg,
+    #292c2b,
+    #232524
+  );
+  color: #f8fafc;
+  padding: 64px 16px;
   text-align: center;
 }
 
+.cta .container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Título da CTA */
 .cta h2 {
-  font-size: 2.6rem;
-  line-height: 1.1;
+  font-size: clamp(1.6rem, 4vw, 2.2rem);
+  font-weight: 800;
+  line-height: 1.2;
+  color: #ffffff;
 }
 
+/* Texto de apoio */
 .cta p {
-  font-size: 1.1rem;
-  opacity: 0.9;
-  margin-bottom: 34px;
+  font-size: 1rem;
+  color: #e0e7ff;
+  max-width: 520px;
+  margin: 0 auto;
 }
 
+.cta span {
+  display: block;
+  font-size: 0.85rem;
+  color: #94a3b8;
+  margin-top: 10px;
+}
+
+/* Hover elegante (desktop) */
+@media (hover: hover) {
+  .cta .btn.light:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 16px 40px rgba(0,0,0,0.3);
+  }
+}
+
+/* RODAPÉ */
 .footer {
   padding: 30px 0;
   text-align: center;
   font-size: 0.9rem;
 }
 
-
-/* TÍTULO DA SEÇÃO */
+/* Título da seção */
 .section-title {
   display: flex;
   align-items: center;
-  gap: 12px;
-  margin-bottom: 56px; /* mantém o respiro da seção */
+  justify-content: center; /* centraliza no dark */
+  margin-bottom: 32px;
 }
 
 .section-title h2 {
@@ -234,10 +348,92 @@
 
 /* Ícone de benefício */
 .benefit-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+
+  background: rgba(34, 197, 94, 0.15);
+  color: #22c55e;
+
+  font-weight: 700;
+  margin-right: 8px;
+}
+
+.benefits .card {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: none;
+}
+
+.benefits .card:hover h3 {
+  color: #f8fafc; /* mantém branco */
+}
+
+.benefits .card:hover p {
+  color: #cbd5f5;
+}
+
+.benefits .card:hover {
+  border-color: rgba(255, 255, 255, 0.12);
+  box-shadow: none;
+}
+
+/* Highlight */
+.highlight {
+  color: #2563eb;
+  font-weight: 700;
+}
+
+.highlight-alt {
+  color: #22c55e;
+  font-weight: 700;
+}
+
+.hl-pill {
   display: inline-block;
-  font-size: 1.4rem;
-  color: var(--accent);
-  margin-bottom: 16px;
+  padding: 4px 12px;
+  border-radius: 999px;
+
+  background: #90b3ff;
+  color: #1630a3;
+
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.h1-upper {
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.btn-whatsapp {
+  background: #0f7520;
+  color: #fdfdfd;
+
+  font-weight: 700;
+  border-radius: 12px;
+  padding: 14px 28px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  text-decoration: none;
+}
+
+/* =========================
+   RESPONSIVIDADE
+========================= */
+
+@media (hover: hover) {
+  .btn-whatsapp:hover {
+    background: #0d6a1d;
+  }
 }
 
 @media (max-width: 768px) {
@@ -269,6 +465,13 @@
 
   .section h2 {
     margin-bottom: 40px;
+  }
+}
+
+@media (min-width: 768px) {
+  .problems-columns {
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
   }
 }
 

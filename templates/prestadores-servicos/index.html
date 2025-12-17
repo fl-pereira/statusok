@@ -18,7 +18,7 @@
     <div class="container topbar-content">
       <img class="brand-logo" data-image="brand.logo" alt="Logo" hidden>
       <span class="logo" data-text="brand.name"></span>
-      <a class="btn small"
+      <a class="btn-whatsapp"
          data-link="brand.whatsapp"
          data-text="brand.cta"></a>
     </div>
@@ -28,9 +28,9 @@
   <section class="hero">
     <div class="container hero-content">
       <div class="hero-text">
-        <h1 data-text="hero.title"></h1>
-        <p data-text="hero.subtitle"></p>
-        <a class="btn"
+        <h1 data-html="hero.title"></h1>
+        <p data-html="hero.subtitle"></p>
+        <a class="btn-whatsapp"
            data-link="hero.ctaLink"
            data-text="hero.ctaText"></a>
       </div>
@@ -41,33 +41,74 @@
   </section>
 
   <!-- SOBRE -->
-  <section class="section">
-    <div class="container narrow">
-      <h2 data-text="about.title"></h2>
+  <section class="section about">
+    <div class="container">
+
+      <div class="container-eyebrow">
+        <div class="section-eyebrow" data-text="about.eyebrow"></div>
+      </div>
+
+      <h2 data-html="about.title"></h2>
       <p data-text="about.text"></p>
+
+      <!-- PROBLEMAS X SOLUÇÕES -->
+      <div class="problems-columns">
+
+        <div class="problems-col">
+          <h3 class="problems-title">Problemas comuns</h3>
+
+          <div class="problem-item">
+            <span class="problem-icon problem">!</span>
+            <p data-text="about.problems.0.problem"></p>
+          </div>
+
+          <div class="problem-item">
+            <span class="problem-icon problem">!</span>
+            <p data-text="about.problems.1.problem"></p>
+          </div>
+        </div>
+
+        <div class="solutions-col">
+          <h3 class="problems-title">Nossas soluções</h3>
+
+          <div class="problem-item solution">
+            <span class="problem-icon solution">✓</span>
+            <p data-text="about.problems.0.solution"></p>
+          </div>
+
+          <div class="problem-item solution">
+            <span class="problem-icon solution">✓</span>
+            <p data-text="about.problems.1.solution"></p>
+          </div>
+        </div>
+
+      </div>
+
     </div>
   </section>
+
 
   <!-- SERVIÇOS -->
   <section class="section light">
     <div class="container">
-      <h2 data-text="services.title"></h2>
+      <h2 data-html="services.title"></h2>
       <div class="cards-grid" data-repeat="services.items">
         <article class="card">
-          <h3 data-item-text="title"></h3>
-          <p data-item-text="description"></p>
+          <h3 data-item-html="title"></h3>
+          <p data-item-html="description"></p>
         </article>
       </div>
     </div>
   </section>
 
   <!-- BENEFÍCIOS -->
-  <section class="section">
+  <section class="section section-dark benefits">
     <div class="container">
       <div class="section-title">
         <span class="benefit-icon">✔</span>
         <h2 data-text="benefits.title"></h2>
       </div>
+
       <div class="cards-grid" data-repeat="benefits.items">
         <article class="card small">
           <h3 data-item-text="title"></h3>
@@ -82,10 +123,11 @@
     <div class="container narrow">
       <h2 data-text="cta.title"></h2>
       <p data-text="cta.text"></p>
-      <a class="btn light"
+      <a class="btn-whatsapp"
          data-link="cta.buttonLink"
          data-text="cta.buttonText"></a>
     </div>
+    <span data-text="cta.span"></span>
   </section>
 
   <!-- FOOTER -->

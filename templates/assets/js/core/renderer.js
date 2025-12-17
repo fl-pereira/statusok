@@ -44,7 +44,6 @@ function renderImages(config) {
   });
 }
 
-
 function renderRepeats(config) {
   document.querySelectorAll('[data-repeat]').forEach(container => {
     const items = getValueByPath(config, container.dataset.repeat);
@@ -70,14 +69,29 @@ function renderRepeats(config) {
         }
     });
 
+    node.querySelectorAll('[data-item-html]').forEach(el => {
+        el.innerHTML = item[el.dataset.itemHtml] || "";
+    });
+
     container.appendChild(node);
     });
   });
 }
+
+function renderHTML(config) {
+  document.querySelectorAll('[data-html]').forEach(el => {
+    const value = getValueByPath(config, el.dataset.html);
+    if (value !== undefined) {
+      el.innerHTML = value;
+    }
+  });
+}
+
 
 function renderTemplate(config) {
   renderTexts(config);
   renderLinks(config);
   renderImages(config);
   renderRepeats(config);
+  renderHTML(config);
 }
