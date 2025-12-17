@@ -2,7 +2,7 @@ window.TEMPLATE_CONFIG = {
   brand: {
     name: "Marido de Aluguel Londrina",
     whatsapp: "https://wa.me/5511999999999",
-    logo: "/assets/img/prestadores/logo-exemplo.png",
+    logo: "templates/assets/img/prestadores/logo-exemplo.png",
     cta: "Fale no WhatsApp"
   },
 
@@ -11,7 +11,7 @@ window.TEMPLATE_CONFIG = {
     subtitle: "Serviços rápidos, realizados com qualidade e sem dor de cabeça. <strong>Resolva seu problema rapidamente.</strong>",
     ctaText: "Clique aqui e me chame no WhatsApp",
     ctaLink: "https://wa.me/5511999999999",
-    image: "/assets/img/prestadores/hero.png"
+    image: "templates/assets/img/prestadores/hero.png"
   },
 
   about: {
